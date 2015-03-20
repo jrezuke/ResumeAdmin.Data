@@ -18,7 +18,7 @@ namespace ResumeAdmin.Data
         {
             return _dbContext.Resumes.AsQueryable();
         }
-
+        
         public Resume GetResume(int resumeId)
         {
             return _dbContext.Resumes.Find(resumeId);
@@ -61,6 +61,8 @@ namespace ResumeAdmin.Data
 
         public PersonalInfo GetPersonalInfo(int personalInfoId)
         {
+            if (personalInfoId == 0)
+                return null;
             return _dbContext.PersonalInfo.Find(personalInfoId);
         }
 
