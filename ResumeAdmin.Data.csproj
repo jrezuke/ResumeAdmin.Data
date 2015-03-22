@@ -50,9 +50,11 @@
     <Compile Include="Entities\Education.cs" />
     <Compile Include="Entities\Employer.cs" />
     <Compile Include="Entities\PersonalInfo.cs" />
+    <Compile Include="Entities\PersonalInfoShort.cs" />
     <Compile Include="Entities\Project.cs" />
     <Compile Include="Entities\ProjectDetail.cs" />
     <Compile Include="Entities\Resume.cs" />
+    <Compile Include="Entities\ResumeShort.cs" />
     <Compile Include="Entities\Skill.cs" />
     <Compile Include="Entities\SkillType.cs" />
     <Compile Include="Entities\Summary.cs" />

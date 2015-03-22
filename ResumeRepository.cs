@@ -18,7 +18,37 @@ namespace ResumeAdmin.Data
         {
             return _dbContext.Resumes.AsQueryable();
         }
-        
+
+        public IQueryable<ResumeShort> GetAllResumesShort()
+        {
+            return
+                _dbContext.Resumes.Select(
+                    r =>
+                        new ResumeShort
+                        {
+                            Id = r.Id,
+                            Name = r.Name,
+                            Description = r.Description,
+                            PersonalInfoId = r.PersonalInfoId
+                        });
+        }
+        public IQueryable<PersonalInfoShort> GetAllPersonalInfoShort()
+        {
+            return _dbContext.PersonalInfo.Select(
+                p => new PersonalInfoShort
+                {
+                    Id=p.Id,
+                    Name = p.Name,
+                    Address1 = p.Address1,
+                    Address2 = p.Address2,
+                    City = p.City,
+                    Email = p.Email,
+                    HomePhone = p.HomePhone,
+                    MobilePhone = p.MobilePhone,
+                    State = p.State,
+                    Zip = p.Zip
+                });
+        }
         public Resume GetResume(int resumeId)
         {
             return _dbContext.Resumes.Find(resumeId);
@@ -76,5 +106,8 @@ namespace ResumeAdmin.Data
         {
             return _dbContext.SaveChanges() > 0;
         }
+
+
+       
     }
 }
